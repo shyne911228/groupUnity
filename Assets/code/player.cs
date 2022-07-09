@@ -22,6 +22,7 @@ public class player : MonoBehaviour  //public class = 檔案名
         rb=GetComponent<Rigidbody2D>();
         an=GetComponent<Animator>();
         
+        
     }
 
     // Update is called once per frame
