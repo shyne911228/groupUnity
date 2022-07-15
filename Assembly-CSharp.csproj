@@ -676,8 +676,14 @@
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>C:/unity/groupUnity/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
+ <Reference Include="Unity.2D.IK.Editor">
+ <HintPath>C:/unity/groupUnity/Library/ScriptAssemblies/Unity.2D.IK.Editor.dll</HintPath>
+ </Reference>
  <Reference Include="Unity.2D.Path.Editor">
  <HintPath>C:/unity/groupUnity/Library/ScriptAssemblies/Unity.2D.Path.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.2D.IK.Runtime">
+ <HintPath>C:/unity/groupUnity/Library/ScriptAssemblies/Unity.2D.IK.Runtime.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/unity/groupUnity/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
@@ -744,12 +750,6 @@
  </Reference>
  <Reference Include="UnityEditor.UI">
  <HintPath>C:/unity/groupUnity/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
- </Reference>
- <Reference Include="Unity.2D.IK.Editor">
- <HintPath>C:/unity/groupUnity/Library/ScriptAssemblies/Unity.2D.IK.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.2D.IK.Runtime">
- <HintPath>C:/unity/groupUnity/Library/ScriptAssemblies/Unity.2D.IK.Runtime.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>
