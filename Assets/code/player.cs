@@ -15,6 +15,9 @@ public class player : MonoBehaviour  //public class = 檔案名
     public float jumpforce;//跳躍力(me)
     
     public float time;
+
+    public GameObject myBag;    //背包變量
+    bool isOpen;
   
 
     void Start()
@@ -29,7 +32,7 @@ public class player : MonoBehaviour  //public class = 檔案名
     void Update()
     {
         jump();
-        
+        OpenMyBag();
     }
     void FixedUpdate() {
         swichan();
@@ -102,6 +105,15 @@ public class player : MonoBehaviour  //public class = 檔案名
         {
             an.SetBool("downing", false);//將落下定義為否
             //    an.SetBool("idle", true);//將站立定義為是
+        }
+    }
+
+    void OpenMyBag()    //背包開關
+    {
+        if (Input.GetKeyDown(KeyCode.O))    //按下O鍵
+        {
+            isOpen = !isOpen;
+            myBag.SetActive(isOpen);
         }
     }
 }
