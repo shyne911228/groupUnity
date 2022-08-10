@@ -18,13 +18,16 @@ public class ItemOnWorld : MonoBehaviour
 
     public void AddNewItem()
     {
-        if (!playerInventory.itemList.Contains(thisItem))
+        if (!playerInventory.itemList.Contains(thisItem))   //若背包內無此item
         {
-            playerInventory.itemList.Add(thisItem);
+            playerInventory.itemList.Add(thisItem);     //新增此item
+            // Manager.CreateNewItem(thisItem);
         }
         else
         {
-            thisItem.itemHeld += 1;
+            thisItem.itemHeld += 1;     //已擁有則直接在持有數量加上1
         }
+
+        Manager.RefreshItem();
     }
 }

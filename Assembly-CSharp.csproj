@@ -56,6 +56,8 @@
     <Compile Include="Assets\Stuff\Inventroy\BagScripts\Inventory.cs" />
     <Compile Include="Assets\Stuff\Inventroy\BagScripts\Item.cs" />
     <Compile Include="Assets\Stuff\Inventroy\BagScripts\ItemOnWorld.cs" />
+    <Compile Include="Assets\Stuff\Inventroy\BagScripts\Manager.cs" />
+    <Compile Include="Assets\Stuff\Inventroy\BagScripts\Slot.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
