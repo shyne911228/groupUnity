@@ -22,6 +22,14 @@ public class Manager : MonoBehaviour
     private void OnEnable()
     {
         RefreshItem();
+        instance.itemInformation.text = "";
+        //物品資訊欄位 應默認為不顯示
+    }
+
+    public static void UpdateItemInfo(string itemDescription)
+    {
+        instance.itemInformation.text = itemDescription;
+        //將物品描述文字 更新於資訊欄位
     }
 
     public static void CreateNewItem(Item item)
@@ -34,6 +42,14 @@ public class Manager : MonoBehaviour
         newItem.slotImage.sprite = item.itemImage;
         newItem.slotNum.text = item.itemHeld.ToString();
         // text中的文字必須為字串 而itemHeld持有數目為整數 因此ToString轉字串
+    }
+
+    public static void Restart()    //當遊戲每次重新開始 都將背包的物品清除重置
+    {
+        for (int i = 0; i < instance.slotGrid.transform.childCount; i++)
+        {
+            Destroy(instance.slotGrid.transform.GetChild(i).gameObject);
+        }
     }
 
     public static void RefreshItem()

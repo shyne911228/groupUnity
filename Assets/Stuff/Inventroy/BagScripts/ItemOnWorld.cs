@@ -7,6 +7,13 @@ public class ItemOnWorld : MonoBehaviour
     public Item thisItem;
     public Inventory playerInventory;
 
+    // Start is called before the first frame update
+    void Start()
+    {
+        thisItem.itemHeld = 0;  //物品持有量設為0
+        Manager.Restart();  //背包物品重置
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))
