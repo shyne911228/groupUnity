@@ -5665,7 +5665,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: left LimbSolver2D/left LimbSolver2D_Target
+    path: model/bone_1/bone_2/bone_10/bone_11/bone_12/bone_13
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -5675,7 +5675,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: left LimbSolver2D/left LimbSolver2D_Target
+    path: model/bone_1/bone_2/bone_10/bone_11/bone_12/bone_13
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -5685,7 +5685,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: left LimbSolver2D/left LimbSolver2D_Target
+    path: model/bone_1/bone_2/bone_10/bone_11/bone_12/bone_13
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -5815,7 +5815,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: model/bone_1/bone_2/bone_10/bone_11/bone_12/bone_13
+    path: left LimbSolver2D/left LimbSolver2D_Target
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -5825,7 +5825,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: model/bone_1/bone_2/bone_10/bone_11/bone_12/bone_13
+    path: left LimbSolver2D/left LimbSolver2D_Target
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -5835,7 +5835,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: model/bone_1/bone_2/bone_10/bone_11/bone_12/bone_13
+    path: left LimbSolver2D/left LimbSolver2D_Target
     classID: 4
     script: {fileID: 0}
   m_HasGenericRootTransform: 0
