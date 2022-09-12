@@ -29,6 +29,8 @@ public class ItemOnWorld : MonoBehaviour
         {
             playerInventory.itemList.Add(thisItem);     //新增此item
             // Manager.CreateNewItem(thisItem);
+
+            thisItem.itemHeld = 1;
         }
         else
         {

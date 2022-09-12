@@ -10,7 +10,7 @@ public class Manager : MonoBehaviour
     public Inventory myBag;
     public GameObject slotGrid;     //背包內的格子
     public Slot slotPrefab;     //物品預製物件
-    public Text itemInformation;    //物品資訊 須加上第4行(.UI)
+    public Text itemInformation;    //物品資訊 _須加上第4行(.UI)
 
     private void Awake()
     {
