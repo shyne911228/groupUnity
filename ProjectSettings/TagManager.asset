@@ -51,3 +51,6 @@ TagManager:
   - name: outside
     uniqueID: 4075812693
     locked: 0
+  - name: front
+    uniqueID: 1169229623
+    locked: 0
