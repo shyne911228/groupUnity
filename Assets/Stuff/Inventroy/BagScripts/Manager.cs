@@ -9,8 +9,10 @@ public class Manager : MonoBehaviour
 
     public Inventory myBag;
     public GameObject slotGrid;     //背包內的格子
-    public Slot slotPrefab;     //物品預製物件
+    public GameObject emptySlot;    //物品預製物件
     public Text itemInformation;    //物品資訊 _須加上第4行(.UI)
+
+    public List<GameObject> slots = new List<GameObject>();
 
     private void Awake()
     {
@@ -32,7 +34,7 @@ public class Manager : MonoBehaviour
         //將物品描述文字 更新於資訊欄位
     }
 
-    public static void CreateNewItem(Item item)
+    /* public static void CreateNewItem(Item item)
     {
         Slot newItem = Instantiate(instance.slotPrefab, instance.slotGrid.transform.position, Quaternion.identity);
         // Slot為一腳本型別
@@ -42,7 +44,7 @@ public class Manager : MonoBehaviour
         newItem.slotImage.sprite = item.itemImage;
         newItem.slotNum.text = item.itemHeld.ToString();
         // text中的文字必須為字串 而itemHeld持有數目為整數 因此ToString轉字串
-    }
+    } */
 
     public static void Restart()    //當遊戲每次重新開始 都將背包的物品清除重置
     {
@@ -65,7 +67,10 @@ public class Manager : MonoBehaviour
 
         for (int i = 0; i < instance.myBag.itemList.Count; i++)
         {
-            CreateNewItem(instance.myBag.itemList[i]);
+            //CreateNewItem(instance.myBag.itemList[i]);
+            instance.slots.Add(Instantiate(instance.emptySlot));
+            instance.slots[i].transform.SetParent(instance.slotGrid.transform);
+        
         }
     }
 }

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: coinExample
   m_EditorClassIdentifier: 
   itemName: "\u91D1\u5E63"
-  itemImage: {fileID: 21300000, guid: 8a70aa1e37297804581ae2e1d3bffada, type: 3}
-  itemHeld: 2
+  itemImage: {fileID: 21300000, guid: d8eff283c5f933949a8d73d4e9eb0996, type: 3}
+  itemHeld: 0
   itemInform: "\u53EF\u4EE5\u7528\u4F86\u8CFC\u8CB7\u4E00\u822C\u7269\u54C1\u53CA\u88DD\u5099\u3002"
   equip: 0
