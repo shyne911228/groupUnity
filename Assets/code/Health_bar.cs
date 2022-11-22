@@ -7,14 +7,14 @@ public class Health_bar : MonoBehaviour
 {
     public TextMeshProUGUI Health;
     public static int healthnow;
-    public  int healthmax;
+    public  static int healthmax;
     private Image healthbar;
 
     // Start is called before the first frame update
     void Start()
     {
         healthbar=GetComponent<Image>();
-        healthnow=healthmax;
+        
         
     }
 

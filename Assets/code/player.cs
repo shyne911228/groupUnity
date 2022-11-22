@@ -17,13 +17,20 @@ public class player : MonoBehaviour  //public class = 檔案名
     public float time;
 
     public GameObject myBag;    //背包變量
+    private Renderer render;
     bool isOpen;
+    private bool ishurt;//默認為false
+    public int Health;
+    public int damage;
   
 
     void Start()
     {
         rb=GetComponent<Rigidbody2D>();
         an=GetComponent<Animator>();
+        render=GetComponent<Renderer>();
+        Health_bar.healthmax=Health;
+        Health_bar.healthnow=Health;
         
         
     }
@@ -105,6 +112,46 @@ public class player : MonoBehaviour  //public class = 檔案名
         {
             an.SetBool("downing", false);//將落下定義為否
             //    an.SetBool("idle", true);//將站立定義為是
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D other) //消滅敵人
+    {
+        if(other.gameObject.tag=="enemy")
+        {
+            // enemy=other.gameObject.GetComponent<enemy>();
+            if(an.GetBool("downing"))
+            {
+                //.kill_enemy();
+                rb.velocity = new Vector2(rb.velocity.x, jumpforce * Time.deltaTime);
+                an.SetBool("jumping", true);
+            }
+            
+            else if(transform.position.x < other.gameObject.transform.position.x)
+            {
+                rb.velocity=new Vector2(-12,rb.velocity.y);
+                ishurt=true;
+                Health-=damage;
+                if (Health<0)
+                {
+                    Health=0;
+                }
+                Health_bar.healthnow=Health;
+                //auh.Play();
+            }
+            else if(transform.position.x > other.gameObject.transform.position.x)
+            {
+                rb.velocity=new Vector2(12,rb.velocity.y);
+                ishurt=true;
+                Health-=damage;
+                if (Health<0)
+                {
+                    Health=0;
+                }
+                Health_bar.healthnow=Health;
+                //auh.Play();
+            }
+            
         }
     }
 
