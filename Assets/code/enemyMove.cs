@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class enemyMove : MonoBehaviour
 {
@@ -12,6 +13,14 @@ public class enemyMove : MonoBehaviour
     public float Speed,jumpforce;
     public LayerMask ground;
     public float leftf,rightf;
+
+
+    public GameObject damagePre;
+    public Image healthBar;
+    const float maxHp = 1000f;
+    float hp = maxHp;
+    float hpWidth;
+    Vector2 direction =Vector2.zero;
  
 
 
@@ -26,6 +35,7 @@ public class enemyMove : MonoBehaviour
         rightf=right.position.x;
         Destroy(left.gameObject);
         Destroy(right.gameObject);
+        hpWidth = healthBar.rectTransform.rect.width;
         /*
         transform.DetachChildren();
       
@@ -86,6 +96,36 @@ public class enemyMove : MonoBehaviour
             an.SetBool("down",false);
         }
     }
-    
-    
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag==("Player"))
+        {
+            
+            float damageNum = collision.GetComponent<player>().GetDamage();
+            SetHealth(damageNum);
+            CreateDamage(damageNum.ToString());
+        }
+    }
+    private  void OnDrawGizmos() {
+        Gizmos.color=Color.red;
+        Gizmos.DrawLine(transform.position,transform.position+(Vector3)direction);
+    }
+    public void SetHealth(float damageNum)
+    {
+        hp -= damageNum;
+        if(hp <= 0f)
+        {
+            ObjectPool.Instance.Push(gameObject);
+            return;
+        }
+
+        float trueWidth = hp / maxHp * hpWidth;
+        healthBar.rectTransform.sizeDelta = new Vector2(trueWidth, healthBar.rectTransform.rect.height);
+    }
+    void CreateDamage(string damageNumStr)
+    {
+        GameObject damage = ObjectPool.Instance.Get(damagePre);
+        damage.transform.position = transform.position;
+        damage.GetComponent<Damage>().Init(damageNumStr);
+    }
 }

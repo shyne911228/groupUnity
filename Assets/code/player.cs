@@ -163,4 +163,10 @@ public class player : MonoBehaviour  //public class = 檔案名
             myBag.SetActive(isOpen);
         }
     }
+    ///以下for測試
+    float damagement =233f;
+    public float GetDamage()
+    {
+        return damagement;
+    }
 }
