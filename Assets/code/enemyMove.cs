@@ -95,6 +95,11 @@ public class enemyMove : MonoBehaviour
         {
             an.SetBool("down",false);
         }
+        if (!an.GetBool("jump") && !an.GetBool("down"))
+        {
+            an.SetBool("jump",false);
+            an.SetBool("down",true);
+        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
